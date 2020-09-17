@@ -3,17 +3,17 @@ import "./font/roboto.css";
 import "./font/razerf5.css";
 import "./css/main.css";
 import "./css/nav.css";
-import "./css/dropdown.css";
 import "./css/switch.css";
 import "./css/slider.css";
 import "./css/checkbox.css";
 import "./css/tooltip.css";
-import "./css/profile-bar.css";
 import "./css/body-widgets.css";
+import Dropdown from './components/dropdown';
+import SwitchDot from './components/switch';
 import './App.css';
 
-class App extends React.Component {
-  render (){
+function App() {
+
   return (
     <div className="main-container">
 
@@ -40,45 +40,9 @@ class App extends React.Component {
 					<div className="loader" tooltip="Syncing Profiles"></div>
 					<div>profile</div>
 
-					<input type="text" name="profile" id="profileEdit" maxlength="25" />
-
-					<div className="dropdown-area">
-						<div id="profileDrop" className="s3-dropdown">
-							<div className="selected">profile 5</div>
-							<div className="icon expand"></div>
-						</div>
-						<div id="profileDropOpt" className="s3-options flex">
-							<div className="option">default profile</div>
-							<div className="option">profile 2</div>
-							<div className="option">profile 3</div>
-							<div className="option">profile 4</div>
-							<div className="option selected">profile 5</div>
-							<div className="option">profile 6</div>
-							<div className="option">profile 7</div>
-							<div className="option">profile 8</div>
-						</div>
-					</div>
 					
-					<div className="dots3 hover-border" id="profileMenuToggle">
-						<div className="profile-act" id="profileMenu">
-							<div className="act action">add</div>
-							<div className="act action">import</div>
-							<div className="act divider"></div>
-							<div className="act action">rename</div>
-							<div className="act action">duplicate</div>
-							<div className="act action">export</div>
-							<div className="act divider"></div>
-							<div className="act action" id="deleteAction">delete</div>
-						</div>
-					</div>
 
-					<div id="deleteAlert" className="flex alert profile-del">
-						<div className="title">delete profile</div>
-						<div className="body-text t-center">
-							You're about to delete this profile. All bindings in this profile will be deleted.
-						</div>
-						<div className="thx-btn" id="deleteConfirm">delete</div>
-					</div>
+					<Dropdown />
 					<div className="obm hover-border" tooltip="On-board Profiles"></div>
 					<div className="divider"></div>
 					<div className="batt batt-30" tooltip="30% Battery"></div>
@@ -87,26 +51,7 @@ class App extends React.Component {
 				<div className="body-widgets flex">
 
 					<div className="widget-col col-left flex">
-						<div className="widget" id="micPhone">
-							<div className="help"></div>
-							<div className="tip">
-								I'm just a tooltip. I'm just a tooltip. I'm just a tooltip. I'm just a tooltip. I'm just a tooltip.
-							</div>
-
-							<div className="title">microphone<div className="switch on switch-slider" id="swPhone"><div className="handle"></div></div></div>
-
-							<div className="h2-title">mic volume</div>
-							<div className="slider-container" id="slPhone">
-								<input type="range" min="10" max="100" value="55" step="1" className="slider" id="slPhoneRange" />
-							</div>
-
-							<div className="h2-title mt20">mic sensitivity<div className="switch on switch-slider" id="swSensi"><div className="handle"></div></div></div>
-							<div className="h2-body">Adjust this setting to remove unwanted background noise or increase the amount of mic output heard</div>
-							<div className="slider-container" id="slSensi">
-								<input type="range" min="10" max="100" value="55" step="1" className="slider" id="slSensiRange" />
-							</div>
-
-						</div>
+						<SwitchDot />
 					</div>
 
 					<div className="widget-col col-right flex">
@@ -128,21 +73,21 @@ class App extends React.Component {
 							<div className="title">enhancements</div>
 
 							<div className="check-item">
-								<input type="checkbox" id="checkNorm" /><label for="checkNorm" className="check-box"><div className="check-text">Volume Normalization</div></label>
+								<input type="checkbox" id="checkNorm" /><label htmlFor="checkNorm" className="check-box"><div className="check-text">Volume Normalization</div></label>
 							</div>
 								<div className="slider-container" id="slNorm">
 									<input type="range" min="10" max="100" value="50" step="1" className="slider" id="slNormRange" />
 								</div>
 
 							<div className="check-item">
-								<input type="checkbox" id="checkAmb" /><label for="checkAmb" className="check-box"><div className="check-text">Ambient Noise Reduction</div></label>
+								<input type="checkbox" id="checkAmb" /><label htmlFor="checkAmb" className="check-box"><div className="check-text">Ambient Noise Reduction</div></label>
 							</div>
 								<div className="slider-container" id="slAmb">
 									<input type="range" min="10" max="100" value="50" step="1" className="slider" id="slAmbRange" />
 								</div>
 
 							<div className="check-item">
-								<input type="checkbox" id="checkClarity" /><label for="checkClarity" className="check-box"><div className="check-text">Voice Clarity</div></label>
+								<input type="checkbox" id="checkClarity" /><label htmlFor="checkClarity" className="check-box"><div className="check-text">Voice Clarity</div></label>
 							</div>
 								<div className="slider-container" id="slClarity">
 									<input type="range" min="10" max="100" value="50" step="1" className="slider" id="slClarityRange" />
@@ -157,7 +102,6 @@ class App extends React.Component {
 			</div>
 		</div>
   );
-  }
 }
 
 export default App;

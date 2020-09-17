@@ -1,39 +1,35 @@
-class Switch {
-	constructor(swId, targetId, toggleClass) {
-		this.switchId = swId;
-		this.targetId = targetId;
-		this.toggleClass = toggleClass;
+import React from 'react';
+import "../css/switch.css";
+import Slider from "./slider";
 
-		this.switchDom = document.getElementById(this.switchId);
-		this.targetDom = document.getElementById(this.targetId);
+function SwitchDot() {
+	return(
+		<div className="widget" id="micPhone">
+			<div className="help"></div>
+			<div className="tip">
+				I'm just a tooltip. I'm just a tooltip. I'm just a tooltip. I'm just a tooltip. I'm just a tooltip.
+			</div>
 
-		if(this.switchDom.classList.contains('on')) {
-			this.targetDom.classList.add('on');
-		} else {
-			this.targetDom.classList.remove('on');
-		}
-	}
-	handleClick() {
-		this.targetDom.classList.toggle(this.toggleClass);
-		this.switchDom.classList.toggle('on');
-		
-		if(this.switchDom.classList.contains('switch-slider')) {
-			document.getElementById(this.targetId+'Range').disabled = !document.getElementById(this.targetId+'Range').disabled;
-		}
+			<div className="title">microphone
+				<div className="switch on switch-slider" id="swPhone">
+					<div className="handle"></div>
+				</div>
+			</div>
 
-		if(this.switchId == 'swBright') {
-			document.getElementById('lightOff').classList.toggle('disabled');
-			var dis = true;
-			if(!document.getElementById('lightOff').classList.contains('disabled')) {
-				dis = false;
-			}
+			<div className="h2-title">mic volume</div>
+			<Slider />
 
-			sliderBr.sliderDom.disabled = dis;
-			sliderIdle.sliderDom.disabled = dis;
-			
-			document.getElementById('checkOff').disabled = dis;
-			document.getElementById('checkIdle').disabled = dis;
+			<div className="h2-title mt20">mic sensitivity
+				<div className="switch on switch-slider" id="swSensi">
+					<div className="handle"></div>
+				</div>
+			</div>
+			<div className="h2-body">Adjust this setting to remove unwanted background noise or increase the amount of mic output heard</div>
+			<div className="slider-container" id="slSensi">
+				<input type="range" min="10" max="100" value="55" step="1" className="slider" id="slSensiRange" />
+			</div>
 
-		}
-	}
+		</div>
+	)
 }
+export default SwitchDot;
