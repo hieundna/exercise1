@@ -8,7 +8,7 @@ function  Dot3(props) {
         }
     });
     return(
-        <Fragment>
+        <>
             <div className={"dots3 hover-border" + (isShow ? " active": "")} 
                 id="profileMenuToggle"
                 onClick={(()=>setIsShow(!isShow))}>
@@ -34,7 +34,7 @@ function  Dot3(props) {
                 </div>
                 <div className="thx-btn" id="deleteConfirm">delete</div>
             </div>
-        </Fragment>
+        </>
     )
 }
 export default Dot3;

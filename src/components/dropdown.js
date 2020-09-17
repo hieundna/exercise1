@@ -1,4 +1,4 @@
-import React, {useState, useEffect, Fragment} from 'react';
+import React, {useState, useEffect} from 'react';
 import "../css/dropdown.css";
 import Dot3 from './dot3';
 function  Dropdown() {
@@ -24,25 +24,23 @@ function  Dropdown() {
 		}
 	},[isShow]);
 
-	useEffect(() =>{
+	const addProfile = () => {
 		if(count>0){
 			listProfile.push("New profile"+ " ("+count+")");
 		}else{
 			listProfile.push("New profile");
 		}
 		setProfile(listProfile[listProfile.length-1]);
-		setCount(count++);
-	}, [count]);
+		setCount((count) => count+1);
+	}
 	return(
-		<Fragment>
-		<form>
+		<>
 			<input className={rename ? "show" : ""} type="text" 
 			name="profile" id="profileEdit" maxLength="25" 
 			value={rename ? profile : ""}
 			onChange={(e) => {
 				setProfile(e.target.value);
 			}}/>
-		</form>
 		<div className="dropdown-area">
 			<div id="profileDrop" className={"s3-dropdown" + expand} onClick={() => setIsShow(!isShow)}>
 				<div className="selected">{profile}</div>
@@ -59,8 +57,8 @@ function  Dropdown() {
 				}
 			</div>
 		</div>
-		<Dot3 addProfile={() => setCount(count++)} renameProfile={() => setRename(true)} />
-        </Fragment>
+		<Dot3 addProfile={addProfile} renameProfile={() => setRename(true)} />
+        </>
 	)
 }
 export default Dropdown;
