@@ -3,13 +3,10 @@ import "./font/roboto.css";
 import "./font/razerf5.css";
 import "./css/main.css";
 import "./css/nav.css";
-import "./css/switch.css";
-import "./css/slider.css";
 import "./css/checkbox.css";
 import "./css/tooltip.css";
-import "./css/body-widgets.css";
 import Dropdown from './components/dropdown';
-import SwitchDot from './components/switch';
+import LeftWidget from './components/left-widget';
 import './App.css';
 
 function App() {
@@ -39,9 +36,6 @@ function App() {
 				<div className="profile-bar flex">
 					<div className="loader" tooltip="Syncing Profiles"></div>
 					<div>profile</div>
-
-					
-
 					<Dropdown />
 					<div className="obm hover-border" tooltip="On-board Profiles"></div>
 					<div className="divider"></div>
@@ -51,7 +45,7 @@ function App() {
 				<div className="body-widgets flex">
 
 					<div className="widget-col col-left flex">
-						<SwitchDot />
+						<LeftWidget />
 					</div>
 
 					<div className="widget-col col-right flex">

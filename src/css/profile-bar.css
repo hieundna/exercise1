@@ -176,7 +176,8 @@
     color: #ccc;
     height: 27px;
     width: 230px;
-    margin-left: -10px;
+    margin-left: 10px;
+    margin-top: -12px;
     display: none;
 }
 #profileEdit.show {
