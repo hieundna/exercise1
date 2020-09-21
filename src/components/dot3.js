@@ -3,11 +3,13 @@ import "../css/profile-bar.css";
 function  Dot3(props) {
     let [isShow, setIsShow] = useState(false);
     let [isDelete, setIsDelete] = useState(false);
+
     document.addEventListener('click', function(event) {
         if (!document.getElementById('profileMenuToggle').contains(event.target)) {
           setIsShow(false);
         }
     });
+    
     return(
         <>
             <div className={"dots3 hover-border" + (isShow ? " active": "")} 
