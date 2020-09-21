@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import "../css/switch.css";
-import "../css/slider.css";
-import "../css/body-widgets.css";
+import "../assets/css/switch.css";
+import "../assets/css/slider.css";
+import "../assets/css/body-widgets.css";
 
 function SwitchDot(props) {
 	return(

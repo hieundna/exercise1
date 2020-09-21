@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import "../css/dropdown.css";
+import "../assets/css/dropdown.css";
 import Dot3 from './dot3';
 function  Dropdown() {
 	let [listProfile, setListProfile] = useState([{id:1,name:"default profile"}, {id:2, name: "profile 2"},
@@ -64,6 +64,7 @@ function  Dropdown() {
 				}
 				newProfile.name = newProfile.name + " (" + countDup + ")";
 				listProfile.push({...newProfile, id: (listProfile[listProfile.length -1].id +1)});
+				break;
 		}
 		setProfile(listProfile[listProfile.length - 1]);
 	}

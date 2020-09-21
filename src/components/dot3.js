@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from 'react';
-import "../css/profile-bar.css";
+import "../assets/css/profile-bar.css";
 function  Dot3(props) {
     let [isShow, setIsShow] = useState(false);
     let [isDelete, setIsDelete] = useState(false);
